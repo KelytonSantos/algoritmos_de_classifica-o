@@ -6,7 +6,7 @@
 
 #ifndef  MERGESORT
 #define  MERGESORT
-#define  MYDEBUG
+//#define  MYDEBUG
 
 // ==============================================
 // --- Bibliotecas ---

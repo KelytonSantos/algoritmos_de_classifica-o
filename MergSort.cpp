@@ -70,6 +70,7 @@ void MergeSort::sortSubVector(int low,int high, char order){
         #endif
 
     //gera sa�da do passo de divis�o
+        #ifdef MYDEBUG
         cout << "split   ";
         displaySubVector(low,high);
         cout << endl << "        ";
@@ -77,7 +78,7 @@ void MergeSort::sortSubVector(int low,int high, char order){
         cout << endl << "        ";
         displaySubVector(middle2,high);
         cout << endl << endl;
-
+        #endif
     //divide o vetor pela metade, classifica cada metade
         sortSubVector(low, middle1,'b');   //primeira metade do vetor
         sortSubVector(middle2, high,'c');  //segunda metade do vetor
@@ -104,11 +105,13 @@ void MergeSort::merge(int left,int middle1,int middle2,int right){
     vector<int> combined(sizeVec); //vetor de trabalho
 
   //gera sa�da dos dois subvetores antes da intercala��o
+    #ifdef MYDEBUG
     cout << "merge:  ";
     displaySubVector(left,middle1);
     cout << endl << "        ";
     displaySubVector(middle2, right);
     cout << endl;
+    #endif
 
   //intercala vetores at� alcan�ar o final de um deles
     while(leftIndex <= middle1 && rightIndex <= right){
@@ -138,11 +141,11 @@ void MergeSort::merge(int left,int middle1,int middle2,int right){
     dados[i] = combined[i];
 
   //gera sa�da do vetor intercalado
+    #ifdef MYDEBUG
     cout << "        ";
     displaySubVector(left,right);
     cout << endl << endl;
-
-
+    #endif
 } //end merge
 
 
